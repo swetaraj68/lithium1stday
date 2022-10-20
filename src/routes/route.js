@@ -36,8 +36,38 @@ router.get('/student-details/:name', function(req, res){
     let requestParams = req.params
     console.log("This is the request ", requestParams)
     let studentName = requestParams.name
-    console.log('Name of the student is ', studentName)
+    console.log('Name of the s ', studentName)
     res.send('Dummy response')
 })
 
+// problem 1
+router.get("./sol1", function (req,res){
+    let arr =[1,2,3,5,6,7]
+    let sum = 0
+    let n = arr[arr.length - 1 ]
+    for (let i =0;i < arr.length;i++){
+    sum += arr[i];}
+    missingNumber =((n*(n+1)/2) -sum)
+    res.send({data : missingNumber})
+})
+ //problem 2
+
+ router.get("./sol2", function (req,res){
+    let arr =[33,34,35,37,38]
+    let sum = 0
+    let n = arr[arr.length - 1 ]
+    let m =(arr[0] - 1)
+    for (let i =0;i < arr.length;i++){
+    sum += arr[i];}
+    missingNumber =((n*(n+1)/2) -sum) -((m*(m+1)/2)-sum)
+    res.send({data : missingNumber})
+})
+
+
+
+
+
+
+
 module.exports = router;
+
